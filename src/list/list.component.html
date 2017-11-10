@@ -1,0 +1,24 @@
+<table v-bind:class="configuration.className">
+    <thead>
+        <th v-for="column in columns">
+            <div>
+                <a class="th-sort" v-on:click="sorted(column)">
+                    {{column.title}}
+                </a>
+                <span class="sort-caret-span">
+                    <span class="caret"></span>
+                </span>
+            </div>
+        </th>
+    </thead>
+    <tbody>
+        <tr v-for="$value in configuration.data">
+            <td v-for="column in columns">
+                <span v-if="!column.content">
+                    {{$value[column.name]}}
+                </span>
+                <span v-if="column.content"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
