@@ -2,8 +2,6 @@ import { Configuration } from '../interfaces';
 
 declare function require(string): string;
 
-let Html = require('./list.component.html');
-
 declare let window;
 
 /**
@@ -33,7 +31,6 @@ export const getHeaders = (configuration: Configuration):Array<any> => {
             widthPorcentage: columnConfig.widthPorcentage   || null,
             conditional: columnConfig.conditional ? columnConfig.conditional : null
         }
-
     });
 }
 
@@ -44,7 +41,7 @@ export namespace ListCreator {
      * @param {Object} configuration atributo com os dados que será usado para criar a tabela.
      */
     export function createHTML(configuration: Configuration): string {
-        return Html;
+        return require('./list.component.html');
     }
 
 }

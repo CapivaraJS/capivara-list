@@ -7,7 +7,7 @@ const baseName = "capivara-list";
 const extractSass = new ExtractTextPlugin({
     filename: baseName + ".css",
     allChunks: true
-});
+})
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index'),
@@ -18,6 +18,7 @@ module.exports = {
     },
     devServer: {
         inline: true,
+        host: '192.168.112.229',
         port: 1111
     },
     plugins: [

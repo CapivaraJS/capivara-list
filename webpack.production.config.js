@@ -18,7 +18,12 @@ module.exports = {
     },
     plugins: [
         new UglifyJSPlugin(),
-        extractSass
+        extractSass,
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        })
     ],
     resolve: {
       extensions: [".ts", ".tsx", ".js"]

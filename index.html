@@ -17,7 +17,7 @@
 
 </div>
 
-   
+    <script src="https://unpkg.com/vue"></script>
     <script src="dist/capivara-list.js"></script>
 
     <script>
@@ -35,11 +35,16 @@
             ],
             columns: 'idade, name',
             className: 'table table-striped',
+            onSort: (column, dir) => {
+                console.log(column, dir);
+            },
             columnsConfig: [
                 {
-                    name: 'idade'
+                    name: 'idade',
+                    sortField: 'idade'
                 }
-            ]
+            ],
+            ordination:true
         });
 
     </script>
